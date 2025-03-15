@@ -1,0 +1,24 @@
+{
+  "name": "gc-backend",
+  "version": "1.0.0",
+  "description": "This will handlers all data from GerenciadorCompras(GC)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sabia-Laranjeira/GC-backend.git"
+  },
+  "author": "Levi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sabia-Laranjeira/GC-backend/issues"
+  },
+  "homepage": "https://github.com/Sabia-Laranjeira/GC-backend#readme",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.21.2",
+    "xlsx": "^0.18.5"
+  }
+}
