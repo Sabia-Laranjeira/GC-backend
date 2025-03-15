@@ -13,8 +13,6 @@ XLSX.stream.set_readable(Readable);
 import * as cpexcel from "xlsx/dist/cpexcel.full.mjs";
 XLSX.set_cptable(cpexcel);
 
-//import xlsx from "json-as-xlsx";
-
 export default class ReportHandler {
   constructor(path,archiveRoot) {
     this.root = new GerenciadorDados(`${path}`,`${archiveRoot}`);
