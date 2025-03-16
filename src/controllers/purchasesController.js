@@ -75,7 +75,7 @@ export const overwritePurchaseReport = (req,res) => {
       unitysPerVolume,
       date);
 
-    const keysToOverwrite = ["Volumes","Valor por Volume","Unidades por Volume","Volumes"]
+    const keysToOverwrite = ["Volumes","Valor por Volume"]
     for(let key of keysToOverwrite) {
       purchasesRecord.updateOne("Data",purchaseRecord["Data"],key,purchaseRecord[`${key}`]);
     }
@@ -87,4 +87,4 @@ export const overwritePurchaseReport = (req,res) => {
   }
   
 
-} //http://localhost:8000/api/overwrite-purchase-report
+}

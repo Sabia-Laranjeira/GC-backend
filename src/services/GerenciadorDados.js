@@ -79,6 +79,17 @@ export default class GerenciadorDados {
 
   }
 
+  addValueTo(indentifierKey,indentifierValue,key,valueToAdd) {
+    const data = this.read();
+    const record = data.find(obj => obj[`${indentifierKey}`] === indentifierValue);
+    if(!record) {
+      return 0;
+    }
+    record[key] = valueToAdd + record[key];
+    this.overWrite(data);
+    return record;
+  }
+
   updateOne(indentifierKey,indentifierValue,key,newValue){
     const data = this.read();
     const record = data.find(obj => obj[`${indentifierKey}`] === indentifierValue);
