@@ -5,6 +5,7 @@ import { writeFileSync } from "fs";
 
 import * as XLSX from "xlsx";
 import * as fs from "fs";
+console.log(XLSX);
 XLSX.set_fs(fs);
 
 import { Readable } from "stream"
@@ -17,8 +18,8 @@ export default class ReportHandler {
   constructor(path,archiveRoot) {
     this.root = new GerenciadorDados(`${path}`,`${archiveRoot}`);
   }
-  #productsRecords = new GerenciadorDados("/home/levi/Área de Trabalho/Domonte/backend/src/data/cadastros/","produtos.json");
-  #purchaseRecords = new GerenciadorDados("/home/levi/Área de Trabalho/Domonte/backend/src/data/relatorios/","historicoCompras.json");
+  #productsRecords = new GerenciadorDados("./src/data/cadastros/","produtos.json");
+  #purchaseRecords = new GerenciadorDados("./src/data/relatorios/","historicoCompras.json");
   getReports() {
     const rootData = this.root.read();
     if(rootData.length) {
