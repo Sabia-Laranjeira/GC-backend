@@ -5,7 +5,7 @@ import { writeFileSync } from "fs";
 
 import * as XLSX from "xlsx";
 import * as fs from "fs";
-console.log(XLSX);
+
 XLSX.set_fs(fs);
 
 import { Readable } from "stream"
@@ -92,7 +92,7 @@ export default class ReportHandler {
     const workbook = XLSX.utils.book_new(worksheet,`Relatório Compra ${formattedDate}`);
     const buf = XLSX.write(workbook,{type:"buffer",bookType:"xlsx"});
     
-    writeFileSync("/home/levi/Área de Trabalho/Domonte/backend/src/data/relatorios/xlsx/relatorio.xlsx",buf);
+    writeFileSync("./src/data/relatorios/xlsx/relatorio.xlsx",buf);
   }
 
   //This function format a date to DD/MM/YY

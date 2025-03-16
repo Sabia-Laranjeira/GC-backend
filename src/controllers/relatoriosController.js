@@ -27,6 +27,7 @@ export const exportReportXLSX = (req,res) => {
       root: "./src/data/relatorios/xlsx"
     }
     const {date} = req.query;
+
     reportHandler.createXlsxFileReport(date)
     const fileName = "relatorio.xlsx"
   
