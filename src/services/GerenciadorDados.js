@@ -9,7 +9,6 @@ export default class GerenciadorDados {
     this.encoding = 'utf-8';
     
     if(!existsSync(this.caminho + this.raiz)) {
-      console.log(this.caminho + this.raiz)
       this._createEmptyArchive();
     }
   }
