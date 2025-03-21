@@ -80,11 +80,12 @@ export const overwritePurchaseReport = (req,res) => {
       purchasesRecord.updateOne("Data",purchaseRecord["Data"],key,purchaseRecord[`${key}`]);
     }
 
+    //update purchase records history.
+    const report = reportHandler.createReport(purchaseRecord["Data"]); 
+
     res.status(200).json({purchaseRecord})
 
   } catch (error) {
     res.status(500).json({error:error.message})
   }
-  
-
 }
