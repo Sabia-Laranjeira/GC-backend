@@ -12,7 +12,6 @@ const url = process.env.URL
 
 const allowedOrigins = ["https://gc-frontend-mu.vercel.app/", "https://wwe.gc-frontend-mu.vercel.app/"];
 
-js
 app.use((req, res, next) => {
     const origin = req.headers.origin;
 
