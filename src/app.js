@@ -16,7 +16,7 @@ const corsOption = {
     "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
   }
 
-app.options(cors(corsOption))
+app.options(url,cors())
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
