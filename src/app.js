@@ -11,13 +11,11 @@ import relatoriosRouter from './routes/relatoriosRouter.js';
 configDotenv();
 const app = express();
 const url = process.env.URL
+
 const corsOption = {
     "origin": url,
-    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
   }
-
-app.options(url,cors())
-
+app.use(cors(corsOption));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
