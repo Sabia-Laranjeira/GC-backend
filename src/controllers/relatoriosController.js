@@ -12,6 +12,7 @@ export const getReport = (req,res) => {
 }
 
 export const getReportFromDate = (req,res) => {
+  console.log(`${process.env.URL}\n${req}\n`)
   const {date} = req.query;
   const report = reportHandler.root.readAllWhere("Data",date)[0];
   if(!report) {
