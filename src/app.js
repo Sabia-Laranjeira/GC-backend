@@ -10,7 +10,7 @@ configDotenv();
 const app = express();
 const url = process.env.URL
 
-const allowedOrigins = ["https://gc-backend-wp6d.onrender.com", "https://www.gc-backend-wp6d.onrender.com"];
+const allowedOrigins = ["https://gc-frontend-mu.vercel.app/", "https://wwe.gc-frontend-mu.vercel.app/"];
 
 app.use((req, res, next) => {
     const origin = req.headers.origin;
