@@ -12,7 +12,7 @@ const app = express();
 const url = process.env.URL
 
 const corsOption = {
-    origin: "https://gc-frontend-mu.vercel.app/",
+    origin: "https://gc-frontend-mu.vercel.app",
     methods: ["GET,HEAD,PUT,PATCH,POST,DELETE",]
   }
 
