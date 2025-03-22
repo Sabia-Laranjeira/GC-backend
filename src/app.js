@@ -12,14 +12,23 @@ const url = process.env.URL
 
 const allowedOrigins = ["https://gc-frontend-mu.vercel.app/", "https://wwe.gc-frontend-mu.vercel.app/"];
 
+js
 app.use((req, res, next) => {
     const origin = req.headers.origin;
+
+    if (!origin) {
+        return res.status(403).json({ error: "Origem não identificada" });
+    }
+
     if (allowedOrigins.includes(origin)) {
         res.header("Access-Control-Allow-Origin", origin);
-    }
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-    next();
+        res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+
+        return next();
+    } 
+
+    return res.status(403).json({ error: "Acesso negado" });
 });
 
 app.use(express.json());
