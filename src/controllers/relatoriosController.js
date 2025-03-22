@@ -1,7 +1,7 @@
 import ReportHandler from "../services/ReportHandler.js";
 import { configDotenv } from "dotenv";
 const reportHandler = new ReportHandler("./src/data/relatorios/","relatoriosGerais.json");
-
+configDotenv()
 export const getReport = (req,res) => {
   const reportsData = reportHandler.getReports();
   if(reportsData) {
