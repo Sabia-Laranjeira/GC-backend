@@ -6,13 +6,18 @@ import compraRouter from './routes/compraRouter.js';
 import produtosRouter from './routes/produtosRouter.js';
 import relatoriosRouter from './routes/relatoriosRouter.js';
 
+
+
 configDotenv();
 const app = express();
 const url = process.env.URL
+const corsOption = {
+    "origin": url,
+    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+  }
 
-app.use(cors({
-  origin: `${url}`,
-}));
+app.options(cors(corsOption))
+
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
