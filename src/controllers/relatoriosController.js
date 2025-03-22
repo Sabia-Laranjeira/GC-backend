@@ -1,7 +1,7 @@
 import ReportHandler from "../services/ReportHandler.js";
-import { configDotenv } from "dotenv";
+
 const reportHandler = new ReportHandler("./src/data/relatorios/","relatoriosGerais.json");
-configDotenv()
+
 export const getReport = (req,res) => {
   const reportsData = reportHandler.getReports();
   if(reportsData) {
@@ -12,7 +12,6 @@ export const getReport = (req,res) => {
 }
 
 export const getReportFromDate = (req,res) => {
-  console.log(`${process.env.URL}\n${req}\n`)
   const {date} = req.query;
   const report = reportHandler.root.readAllWhere("Data",date)[0];
   if(!report) {

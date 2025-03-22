@@ -11,7 +11,7 @@ const app = express();
 const url = process.env.URL
 
 const corsOption = {
-    "origin": url,
+    "origin": "https://gc-frontend-mu.vercel.app/"",
   }
 
 app.use(cors(corsOption));
