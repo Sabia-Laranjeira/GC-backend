@@ -14,7 +14,7 @@ const allowedOrigins = ["https://gc-frontend-mu.vercel.app/", "https://www.gc-fr
 
 app.use((req, res, next) => {
     const origin = req.headers.origin;
-
+    console.log(origin)
     if (!origin) {
         return res.status(403).json({ error: "Origem não identificada" });
     }
