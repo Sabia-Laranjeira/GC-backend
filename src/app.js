@@ -10,11 +10,11 @@ configDotenv();
 const app = express();
 const url = process.env.URL
 
-const allowedOrigins = ["https://gc-frontend-mu.vercel.app/", "https://www.gc-frontend-mu.vercel.app/"];
+const allowedOrigins = ["https://gc-frontend-mu.vercel.app", "https://www.gc-frontend-mu.vercel.app"];
 
 app.use((req, res, next) => {
     const origin = req.headers.origin;
-    console.log(origin)
+
     if (!origin) {
         return res.status(403).json({ error: "Origem não identificada" });
     }
