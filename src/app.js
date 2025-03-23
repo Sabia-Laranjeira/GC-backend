@@ -10,7 +10,7 @@ configDotenv();
 const app = express();
 const url = process.env.URL
 
-const allowedOrigins = ["https://gc-frontend-mu.vercel.app/", "https://wwe.gc-frontend-mu.vercel.app/"];
+const allowedOrigins = ["https://gc-frontend-mu.vercel.app/", "https://www.gc-frontend-mu.vercel.app/"];
 
 app.use((req, res, next) => {
     const origin = req.headers.origin;
