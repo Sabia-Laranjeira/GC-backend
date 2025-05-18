@@ -28,7 +28,8 @@ export const postPurchaseReport = (req,res) => {
       date);
     //Check if a product in this date already exist
     const products = purchasesRecord.readAllWhere("Codigo",productCode);
-    if(products.length > 1) {
+    console.log(products);
+    if(products.length >= 1) {
       products.forEach(p => {
         if(p["Data"] === purchaseRecord["Data"]) {
           throw new Error("[ALREADY EXISTS]");      

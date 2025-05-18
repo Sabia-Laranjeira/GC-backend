@@ -8,7 +8,7 @@ const compraRouter = express.Router();
 
 compraRouter.get('/api/purchase-records',getRegistroCompras);
 
-compraRouter.post('/api/send-purchase-report', postPurchaseReport);
+compraRouter.post('/api/send-purchase-record', postPurchaseReport);
 
 compraRouter.post('/api/overwrite-purchase-report', overwritePurchaseReport);
 
