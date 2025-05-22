@@ -9,7 +9,7 @@ import relatoriosRouter from './routes/relatoriosRouter.js';
 configDotenv();
 const app = express();
 
-const allowedOrigins = ["http://localhost:5173"]//["https://gc-frontend-mu.vercel.app", "https://www.gc-frontend-mu.vercel.app"];
+const allowedOrigins = ["https://gc-frontend-mu.vercel.app", "https://www.gc-frontend-mu.vercel.app"];
 
 app.use((req, res, next) => {
     const origin = req.headers.origin;

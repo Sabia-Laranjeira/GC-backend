@@ -28,7 +28,7 @@ export const postPurchaseReport = (req,res) => {
       date);
     //Check if a product in this date already exist
     const products = purchasesRecord.readAllWhere("Codigo",productCode);
-    console.log(products);
+
     if(products.length >= 1) {
       products.forEach(p => {
         if(p["Data"] === purchaseRecord["Data"]) {
@@ -61,7 +61,7 @@ export const postPurchaseReport = (req,res) => {
   }
 }
 
-export const overwritePurchaseReport = (req,res) => {
+export const overwritePurchaseRecord = (req,res) => {
   try {
     const {
       date,productCode,
@@ -76,7 +76,7 @@ export const overwritePurchaseReport = (req,res) => {
       unitysPerVolume,
       date);
 
-    const keysToOverwrite = ["Volumes","Valor por Volume"]
+    const keysToOverwrite = ["Volumes","Valor por Volume","Unidades por Volume","Markup"]
     for(let key of keysToOverwrite) {
       purchasesRecord.updateOne("Data",purchaseRecord["Data"],key,purchaseRecord[`${key}`]);
     }
@@ -84,7 +84,7 @@ export const overwritePurchaseReport = (req,res) => {
     //update purchase records history.
     const report = reportHandler.createReport(purchaseRecord["Data"]); 
 
-    res.status(200).json({purchaseRecord})
+    res.status(200).json({purchaseRecord, report})
 
   } catch (error) {
     res.status(500).json({error:error.message})

@@ -12,7 +12,8 @@ export const getReport = (req,res) => {
 }
 
 export const getReportFromDate = (req,res) => {
-  const {date} = req.query;
+  const { date } = req.query;
+
   const report = reportHandler.root.readAllWhere("Data",date)[0];
   if(!report) {
      res.status(404).json({status:404,error:`[NOT FOUND] Could not find report on date ${date}`})
@@ -20,7 +21,6 @@ export const getReportFromDate = (req,res) => {
    } 
   res.status(200).json({status:200,response:report});
 }
-
 export const exportReportXLSX = (req,res) => {
   try {
     const options = {
